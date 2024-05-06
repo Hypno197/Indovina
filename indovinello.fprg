@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Luca_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-06 12:45:43 "/>
+        <attribute name="created" value="THVjYV87SFlQTk87MjAyNC0wNS0wNjsiMTI6MjY6MzkgIjsyMDc5"/>
+        <attribute name="edited" value="THVjYV87SFlQTk87MjAyNC0wNS0wNjsiMTI6NDU6NDMgIjsxOzIxODM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numeroSegreto" type="Integer" array="False" size=""/>
+            <declare name="tentativi" type="Integer" array="False" size=""/>
+            <assign variable="tentativi" expression="1"/>
+            <declare name="numeroUtente" type="Integer" array="False" size=""/>
+            <assign variable="numeroSegreto" expression="random(100)+1"/>
+            <do expression="numeroUtente != numeroSegreto">
+                <output expression="&quot;a che numero sto pensando?&quot;" newline="True"/>
+                <input variable="numeroUtente"/>
+                <if expression="numeroUtente &gt;= numeroSegreto">
+                    <then>
+                        <if expression="numeroUtente = numeroSegreto">
+                            <then>
+                                <output expression="&quot;Sei forte! Hai impiegato &quot;&amp;tentativi&amp;&quot; tentativi!&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;Prova un numero pi&#249; piccolo&quot;" newline="True"/>
+                                <assign variable="tentativi" expression="tentativi+1"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <output expression="&quot;Prova un numero pi&#249; grande&quot;" newline="True"/>
+                        <assign variable="tentativi" expression="tentativi+1"/>
+                    </else>
+                </if>
+            </do>
+        </body>
+    </function>
+</flowgorithm>
